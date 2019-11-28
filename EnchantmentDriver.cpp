@@ -8,7 +8,6 @@ class Human{
     int health, mana;
     int level;
     int attack, armor;
-
     vector <Enchantment> item; 
 public:
     Human(int h, int m){

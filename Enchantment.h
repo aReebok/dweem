@@ -7,7 +7,7 @@ using namespace std;
 class Enchantment {
     protected:
     int type; 
-    /* type 1 is health, type 2 is mana.
+    /* type 1 is health, type 2 is mana
     3 is armor buff, 4 is attack buff , 
     when no type entered, then creates type 1*/
     int magnitude; // the magnitude of enchantment

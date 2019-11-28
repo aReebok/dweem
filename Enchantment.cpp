@@ -1,6 +1,5 @@
 #include "Enchantment.h"
 
-
 Enchantment :: Enchantment (int t): magnitude(DEFAULT_MAGNITUDE), acquired (0), state (1){
     check_inbound (1,4,t,type); //checks that t is in bound then sets type = t
 }
