@@ -1,0 +1,40 @@
+- View:
+    style:
+      flex: 1
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: stretch
+    children:
+      - Image:
+          source: health2.png
+          style:
+            top: 100
+            right: -200
+            width: 80
+            height: 20
+      - Image:
+          source: black.png
+          style:
+            top: 100
+            width: 300
+            height: 200
+      - Image: 
+          source: monster_burned.png
+          style: 
+            top: -50
+            right: -100
+            width: 80
+            height: 110
+      - Image: 
+          source: fight.png
+          style: 
+            top: -100
+            right: -50
+            width: 200
+            height: 80
+
+      
+      
+      
+          
+      

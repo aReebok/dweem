@@ -1,0 +1,43 @@
+
+
+- View:
+    style:
+      flex: 1
+      flexDirection: column
+      justifyContent: flex-start
+      alignItems: stretch
+    children:
+      - Image:
+          source: health2.png
+          style:
+            top: 100
+            right: -200
+            width: 80
+            height: 20
+      - Image:
+          source: backdrop1.png
+          style:
+            top: 100
+            width: 300
+            height: 300
+      - Image: 
+          source: tile000.png
+          style: 
+            top: -20
+            right: -125
+            width: 40
+            height: 60
+      - Image: 
+          source: settings.png
+          style: 
+            top: -10
+            right: -15
+            width: 40
+            height: 40
+      - Image: 
+          source: help.png
+          style: 
+            top: -55
+            right: -250
+            width: 40
+            height: 40
