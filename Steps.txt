@@ -1,0 +1,13 @@
+Step 1: Select character race (Each character has uniqe bonuses)
+use vector for race bonuses
+Step 2: Choose Stats (User input, limits, class entity initiallizes)
+Step 3: Show character stats including bonuses (give option to confirm or rechoose race)
+Step 4: Select Weapon (give options)
+Step 5: Display Stats (Confirm or choose again)
+
+
+USE MAP to select stored armours and weapons.
+USE VECTOR for character stats.
+Ideas:
+Use each stat in quest such as gambling/fighting/running
+Use food for travel
