@@ -1,0 +1,30 @@
+- View:
+    style:
+      flex: 1
+      flexDirection: column
+      justifyContent: flex
+      alignItems: stretch
+    children:
+      - Image:
+          source: https://wallpaperplay.com/walls/full/c/2/e/76244.jpg
+          style: 
+            width: 50%
+            height: 50%
+      - Button:
+          id: startgame
+          style:
+            top: -325
+            right: -55
+            width: 200
+            height: 100
+            backgroundColor: rgb(0, 205, 255)
+          on_touch:
+            backgroundColor: rgb(0, 255, 213)
+          children:
+            - Text:
+                style:
+                  color: lightgreen
+                  fontSize: 50
+                  marginTop: 15
+                  marginLeft: 37
+                index: {startmain}

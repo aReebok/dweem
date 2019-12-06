@@ -1,0 +1,78 @@
+- View:
+    style:
+      flex: 1
+      flexDirection: column
+      justifyContent: flex
+      alignItems: stretch
+    children:
+      - Image:
+          source: pngfind.com-shovel-knight-sprite-png-5030555.png
+          style: 
+            top: 10
+            right: -10
+            width: 110
+            height: 110
+      - Button:
+          id: confirm
+          style:
+            top: 20
+            right: -10
+            width: 110
+            height: 35
+            backgroundColor: rgb(0, 205, 255)
+          on_touch:
+            backgroundColor: rgb(0, 255, 213)
+          children:
+            - Text:
+                style:
+                  color: lightgreen
+                  fontSize: 20
+                  marginTop: 5
+                  marginLeft: 15
+                index: {confirm}  
+      - Button:
+          id: cancel
+          style:
+            top: 25
+            right: -10
+            width: 110
+            height: 35
+            backgroundColor: rgb(0, 205, 255)
+          on_touch:
+            backgroundColor: rgb(0, 255, 213)
+          children:
+            - Text:
+                style:
+                  color: lightgreen
+                  fontSize: 20
+                  marginTop: 5
+                  marginLeft: 15
+                index: {cancel}  
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: -180
+            marginLeft: 140 
+          index: {hbonus1}
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: 10
+            marginLeft: 140
+          index: {hbonus2}
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: 10
+            marginLeft: 140
+          index: {hbonus3}
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: 10
+            marginLeft: 140
+          index: {hbonus4}

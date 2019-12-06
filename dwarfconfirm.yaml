@@ -1,0 +1,71 @@
+- View:
+    style:
+      flex: 1
+      flexDirection: column
+      justifyContent: flex
+      alignItems: stretch
+    children:
+      - Image:
+          source: pngfind.com-dwarf-token-png-4433841.png
+          style: 
+            top: 10
+            right: -10
+            width: 160
+            height: 175
+      - Button:
+          id: confirm
+          style:
+            top: 20
+            right: -10
+            width: 110
+            height: 35
+            backgroundColor: rgb(0, 205, 255)
+          on_touch:
+            backgroundColor: rgb(0, 255, 213)
+          children:
+            - Text:
+                style:
+                  color: lightgreen
+                  fontSize: 20
+                  marginTop: 5
+                  marginLeft: 15
+                index: {confirm}  
+      - Button:
+          id: cancel
+          style:
+            top: 25
+            right: -10
+            width: 110
+            height: 35
+            backgroundColor: rgb(0, 205, 255)
+          on_touch:
+            backgroundColor: rgb(0, 255, 213)
+          children:
+            - Text:
+                style:
+                  color: lightgreen
+                  fontSize: 20
+                  marginTop: 5
+                  marginLeft: 15
+                index: {cancel}  
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: -240
+            marginLeft: 160 
+          index: {dbonus1}
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: 10
+            marginLeft: 160
+          index: {dbonus2}
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: 10
+            marginLeft: 160
+          index: {dbonus3}
