@@ -1,0 +1,152 @@
+- View:
+    style:
+      backgroundColor: red
+      flex: 1
+    children:
+      - Text:
+          style:
+            marginTop: 30
+            fontSize: 15
+            color: black
+          index: {index0}
+      - TextInput:
+          index: {StrengthInput}
+          len: 3
+          style:
+            marginTop: -21
+            marginLeft: 225
+            width: 50
+            height: 25
+            fontSize: 15
+            backgroundColor: 'white'
+            borderColor: 'grey'
+            borderWidth: 1
+- View:
+    style:
+      backgroundColor: yellow
+      flex: 1
+    children:
+      - Text:
+          style:
+            marginTop: 30
+            fontSize: 15
+            color: black
+          index: {index1}
+      - TextInput:
+          index: {SpeedInput}
+          len: 3
+          style:
+            marginTop: -21
+            marginLeft: 225
+            width: 50
+            height: 25
+            fontSize: 15
+            backgroundColor: 'white'
+            borderColor: 'grey'
+            borderWidth: 1
+- View:
+    style:
+      backgroundColor: brown
+      flex: 1
+    children:
+      - Text:
+          style:
+            marginTop: 30
+            fontSize: 15
+            color: black
+          index: {index2}
+      - TextInput:
+          index: {DexterityInput}
+          len: 3
+          style:
+            marginTop: -21
+            marginLeft: 225
+            width: 50
+            height: 25
+            fontSize: 15
+            backgroundColor: 'white'
+            borderColor: 'grey'
+            borderWidth: 1
+- View:
+    style:
+      backgroundColor: green
+      flex: 1
+    children:
+      - Text:
+          style:
+            marginTop: 30
+            fontSize: 15
+            color: black
+          index: {index3}
+      - TextInput:
+          index: {IntelligenceInput}
+          len: 3
+          style:
+            marginTop: -21
+            marginLeft: 225
+            width: 50
+            height: 25
+            fontSize: 15
+            backgroundColor: 'white'
+            borderColor: 'grey'
+            borderWidth: 1
+- View:
+    style:
+      backgroundColor: blue
+      flex: 1
+    children:
+      - Text:
+          style:
+            marginTop: 30
+            fontSize: 15
+            color: black
+          index: {index4}
+      - TextInput:
+          index: {WisdomInput}
+          len: 3
+          style:
+            marginTop: -21
+            marginLeft: 225
+            width: 50
+            height: 25
+            fontSize: 15
+            backgroundColor: 'white'
+            borderColor: 'grey'
+            borderWidth: 1
+- View:
+    style:
+      backgroundColor: purple
+      flex: 1
+    children:
+      - Text:
+          style:
+            marginTop: 30
+            fontSize: 15
+            color: black
+          index: {index5}
+      - TextInput:
+          index: {CharismaInput}
+          len: 3
+          style:
+            marginTop: -21
+            marginLeft: 225
+            width: 50
+            height: 25
+            fontSize: 15
+            backgroundColor: 'white'
+            borderColor: 'grey'
+            borderWidth: 1
+- Button:
+    id: to_game
+    style:
+      flex: 1
+      backgroundColor: orange
+    on_touch:
+      backgroundColor: black
+    children:
+      - Text:
+          style:
+            marginTop: 20
+            marginLeft: 65
+            fontSize: 25
+          index: {button_index}

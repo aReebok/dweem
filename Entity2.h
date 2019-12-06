@@ -16,17 +16,10 @@ class Entity{
     float intelligence;
     float wisdom;
     float charisma;
-    bool NPC;
-    bool enemy;
-    bool boots;
-    bool chest_plate;
-    bool helmet;
-    bool leggings;
-    bool weapon;
 public:
-    Entity() : level(1), xp(0), health(10), stamina(10), speed(5), strength(2), dexterity(0), intelligence(5), wisdom(5), charisma(2), NPC(true), enemy(false), boots(false), chest_plate(false), helmet(false), leggings(false), weapon(false) {}
+    Entity() : level(1), xp(0), health(10), stamina(10), speed(5), strength(2), dexterity(0), intelligence(5), wisdom(5), charisma(2){}
 
-    Entity(float str, float dex, float intel, float wis, float ch, float sp) : level(1), xp(0), health(10), stamina(10), speed(sp), strength(str), dexterity(dex), intelligence(intel), wisdom(wis), charisma(ch), NPC(false), enemy(false), boots(false), chest_plate(false), helmet(false), leggings(false), weapon(false) {}
+    Entity(float str, float dex, float intel, float wis, float ch, float sp) : level(1), xp(0), health(10), stamina(10), speed(sp), strength(str), dexterity(dex), intelligence(intel), wisdom(wis), charisma(ch){}
 
     void set_strength(int s);
 };
