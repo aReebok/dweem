@@ -1,4 +1,5 @@
 #include"../react.h"
+#include"Entity2.h"
 
 int main() {
     init();
@@ -51,7 +52,17 @@ int main() {
         if (event_id_is("cancel")) x = 1;
         if (event_id_is("elf")) x = 3;
         if (event_id_is("dwarf")) {x = 4;}
-        //if (event_id_is("confirm")) x = 6; //goes to Nick's YAML file
+        if (event_id_is("confirm"))
+        {
+            if (x == 2)
+            {
+                Human H;
+            }
+            if (x==3)
+            {
+                
+            }
+        }; //goes to Nick's YAML file //creats entity object 
     }
 
     if (x == 0) {add_yaml("startingmenu.yaml", {{"startmain", startmain}});}
@@ -59,6 +70,8 @@ int main() {
     if (x == 2) {add_yaml("humanconfirm.yaml", {{"confirm", confirm}, {"cancel", cancel}, {"hbonus1", hbonus1}, {"hbonus2", hbonus2}, {"hbonus3", hbonus3}, {"hbonus4", hbonus4}});}
     if (x == 3) {add_yaml("elfconfirm.yaml", {{"confirm", confirm}, {"cancel", cancel}, {"ebonus1", ebonus1}, {"ebonus2", ebonus2}, {"ebonus3", ebonus3}});}
     if (x == 4) {add_yaml("dwarfconfirm.yaml", {{"confirm", confirm}, {"cancel", cancel}, {"dbonus1", dbonus1}, {"dbonus2", dbonus2}, {"dbonus3", dbonus3}});}
+    
+
 
     //if (x == 6) {add_yaml(NICK'S YAMl FILE);}
     quit();
