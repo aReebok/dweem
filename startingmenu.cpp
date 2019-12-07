@@ -1,10 +1,16 @@
 #include"../react.h"
+<<<<<<< HEAD
+//#include"Entity2.h"
+=======
 #include"Entity2.h"
+>>>>>>> 2d44fdc6ebef508e07ec13eb21c8b55320a0ad22
 
 int main() {
     init();
     int &x = int_at(1500);
 
+    const int title = 240;
+    print_at(240, "Dweem Conquest");
     const int startmain = 5;
     print_at(5, "start");
 
@@ -21,13 +27,11 @@ int main() {
     print_at(110, "cancel");
 
     const int hbonus1 = 40;
-    print_at(40, "strength: +1");
+    print_at(40, "strength: +2");
     const int hbonus2 = 60;
     print_at(60, "speed: +2");
     const int hbonus3 = 70;
     print_at(70, "dexterity: +2");
-    const int hbonus4 = 90;
-    print_at(90, "wisdom: +1");
 
     const int ebonus1 = 120;
     print_at(120, "speed: +3");
@@ -62,14 +66,14 @@ int main() {
             {
 
             }
-        }; //goes to Nick's YAML file //creats entity object 
+        }; //goes to Nick's YAML file //creats entity object */
     }
 
-    if (x == 0) {add_yaml("startingmenu.yaml", {{"startmain", startmain}});}
+    if (x == 0) {add_yaml("startingmenu.yaml", {{"startmain", startmain}, {"title", title}});}
     if (x == 1) {add_yaml("characterselection.yaml", {{"human", human}, {"elf", elf}, {"dwarf", dwarf}});}
-    if (x == 2) {add_yaml("humanconfirm.yaml", {{"confirm", confirm}, {"cancel", cancel}, {"hbonus1", hbonus1}, {"hbonus2", hbonus2}, {"hbonus3", hbonus3}, {"hbonus4", hbonus4}});}
-    if (x == 3) {add_yaml("elfconfirm.yaml", {{"confirm", confirm}, {"cancel", cancel}, {"ebonus1", ebonus1}, {"ebonus2", ebonus2}, {"ebonus3", ebonus3}});}
-    if (x == 4) {add_yaml("dwarfconfirm.yaml", {{"confirm", confirm}, {"cancel", cancel}, {"dbonus1", dbonus1}, {"dbonus2", dbonus2}, {"dbonus3", dbonus3}});}
+    if (x == 2) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-shovel-knight-sprite-png-5030555.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", hbonus1}, {"bonus2", hbonus2}, {"bonus3", hbonus3}});}
+    if (x == 3) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-elf-png-51586.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", ebonus1}, {"bonus2", ebonus2}, {"bonus3", ebonus3}});}
+    if (x == 4) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-dwarf-token-png-4433841.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", dbonus1}, {"bonus2", dbonus2}, {"bonus3", dbonus3}});}
     
 
 
