@@ -1,0 +1,71 @@
+- View:
+    style:
+      flex: 1
+      flexDirection: column
+      justifyContent: flex
+      alignItems: stretch
+    children:
+      - Image:
+          source: {image} 
+          style: 
+            top: 10
+            right: -10
+            width: 110
+            height: 120
+      - Button:
+          id: confirm
+          style:
+            top: 20
+            right: -10
+            width: 110
+            height: 35
+            backgroundColor: rgb(0, 205, 255)
+          on_touch:
+            backgroundColor: rgb(0, 255, 213)
+          children:
+            - Text:
+                style:
+                  color: lightgreen
+                  fontSize: 20
+                  marginTop: 5
+                  marginLeft: 15
+                index: {confirm}  
+      - Button:
+          id: cancel
+          style:
+            top: 25
+            right: -10
+            width: 110
+            height: 35
+            backgroundColor: rgb(0, 205, 255)
+          on_touch:
+            backgroundColor: rgb(0, 255, 213)
+          children:
+            - Text:
+                style:
+                  color: lightgreen
+                  fontSize: 20
+                  marginTop: 5
+                  marginLeft: 15
+                index: {cancel}  
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: -180
+            marginLeft: 140 
+          index: {bonus1}
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: 10
+            marginLeft: 140
+          index: {bonus2}
+      - Text:
+          style:
+            color: blue
+            fontSize: 20
+            marginTop: 10
+            marginLeft: 140
+          index: {bonus3}
