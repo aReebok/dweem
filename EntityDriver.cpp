@@ -1,4 +1,5 @@
 #include "Entity.h"
+#include "Entity.cpp"
 
 int main () {
 	srand(time(NULL));
