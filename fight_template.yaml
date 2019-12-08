@@ -74,11 +74,11 @@
       flexDirection: row
     children:
       - Button:
-          id: button_next
+          id: button_attack
           style:
-            width: 30
+            width: 60
             height: 30
-            borderRadius: 15
+            borderRadius: 0
             borderWidth: 2
             backgroundColor: rgb(118, 163, 148)
             alignItems: center
@@ -90,13 +90,13 @@
                   color: black
                   fontSize: 15
                   marginTop: 3
-                index: 1100
+                index: 1340
       - Button:
-          id: button_next
+          id: button_item
           style:
-            width: 30
+            width: 60
             height: 30
-            borderRadius: 15
+            borderRadius: 0
             borderWidth: 2
             backgroundColor: rgb(118, 163, 148)
             alignItems: center
@@ -108,13 +108,13 @@
                   color: black
                   fontSize: 15
                   marginTop: 3
-                index: 1100
+                index: 1350
       - Button:
-          id: button_next
+          id: button_talk
           style:
-            width: 30
+            width: 60
             height: 30
-            borderRadius: 15
+            borderRadius: 0
             borderWidth: 2
             backgroundColor: rgb(118, 163, 148)
             alignItems: center
@@ -126,13 +126,31 @@
                   color: black
                   fontSize: 15
                   marginTop: 3
-                index: 1100
+                index: 1360
+      - Button:
+          id: button_leave
+          style:
+            width: 60
+            height: 30
+            borderRadius: 0
+            borderWidth: 2
+            backgroundColor: rgb(118, 163, 148)
+            alignItems: center
+          on_touch:
+            backgroundColor: rgb(118, 200, 148)
+          children:
+            - Text:
+                style:
+                  color: black
+                  fontSize: 15
+                  marginTop: 3
+                index: 1370
 
 - View:
     style:
       flex: 4
       flexDirection: row
-      backgroundColor: black
+      backgroundColor: white
     children: 
       - Button:
           id: button_settings
@@ -159,7 +177,7 @@
           style:
             width: 50
             height: 50
-            right: -210
+            right: -240
             top: 5
             borderRadius: 25
             borderWidth: 2
