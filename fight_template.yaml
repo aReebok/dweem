@@ -91,6 +91,42 @@
                   fontSize: 15
                   marginTop: 3
                 index: 1100
+      - Button:
+          id: button_next
+          style:
+            width: 30
+            height: 30
+            borderRadius: 15
+            borderWidth: 2
+            backgroundColor: rgb(118, 163, 148)
+            alignItems: center
+          on_touch:
+            backgroundColor: rgb(118, 200, 148)
+          children:
+            - Text:
+                style:
+                  color: black
+                  fontSize: 15
+                  marginTop: 3
+                index: 1100
+      - Button:
+          id: button_next
+          style:
+            width: 30
+            height: 30
+            borderRadius: 15
+            borderWidth: 2
+            backgroundColor: rgb(118, 163, 148)
+            alignItems: center
+          on_touch:
+            backgroundColor: rgb(118, 200, 148)
+          children:
+            - Text:
+                style:
+                  color: black
+                  fontSize: 15
+                  marginTop: 3
+                index: 1100
 
 - View:
     style:
