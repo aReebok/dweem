@@ -56,7 +56,7 @@
       flex: 8
       backgroundColor: rgb(4, 42, 63)
       justifyContent: space-around
-      alignItems: flex-end
+      alignItems: center
     children:
       - Text:
           style:
@@ -64,9 +64,9 @@
             fontSize: 10
             marginLeft: 10
             marginTop: 10
-          index: 1000
+          index: 1100
       - Button:
-          id: button_1a
+          id: button_next
           style:
             width: 30
             height: 30
@@ -129,5 +129,3 @@
                   fontSize: 10
                   marginTop: 14
                 index: 1220
-            
-      
