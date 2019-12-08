@@ -11,7 +11,7 @@
           index: {index0}
       - TextInput:
           index: {StrengthInput}
-          len: 3
+          len: 2
           style:
             marginTop: -21
             marginLeft: 225
@@ -34,7 +34,7 @@
           index: {index1}
       - TextInput:
           index: {SpeedInput}
-          len: 3
+          len: 2
           style:
             marginTop: -21
             marginLeft: 225
@@ -57,7 +57,7 @@
           index: {index2}
       - TextInput:
           index: {DexterityInput}
-          len: 3
+          len: 2
           style:
             marginTop: -21
             marginLeft: 225
@@ -80,7 +80,7 @@
           index: {index3}
       - TextInput:
           index: {IntelligenceInput}
-          len: 3
+          len: 2
           style:
             marginTop: -21
             marginLeft: 225
@@ -103,7 +103,7 @@
           index: {index4}
       - TextInput:
           index: {WisdomInput}
-          len: 3
+          len: 2
           style:
             marginTop: -21
             marginLeft: 225
@@ -126,7 +126,7 @@
           index: {index5}
       - TextInput:
           index: {CharismaInput}
-          len: 3
+          len: 2
           style:
             marginTop: -21
             marginLeft: 225
@@ -137,7 +137,7 @@
             borderColor: 'grey'
             borderWidth: 1
 - Button:
-    id: to_game
+    id: choose_character
     style:
       flex: 1
       backgroundColor: orange

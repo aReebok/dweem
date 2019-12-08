@@ -104,7 +104,7 @@ void combined_stats (Player p, Enemy e) {
 void init_combat(Player p, Enemy e) {
 	cout << "combat initiated" << endl;
 	string user_input;
-	while ( (p.get_health() >= 0) & (e.get_health() >= 0) ) {		
+	while ( (p.get_health() >= 0) && (e.get_health() >= 0) ) {		
 		// while one of the either is alive, do this loop
 		cout<< "chose to use fight or use health potion: f or h" << endl;
 		cin >> user_input; //PLAYER's FUNCTIONS ---------------
