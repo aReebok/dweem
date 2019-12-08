@@ -2,28 +2,23 @@
     style:
       flex: 7
       backgroundColor: black
-      justifyContent: space-around
       alignItems: center
     children:
       - Image:
           source: https://i.redd.it/84v93ejlx7l31.png
           style: 
             width: 75%
+            top: 30
             height: 50%
-            top: 75
-      - Text:
-          style:
-            color: rgb(81,36,23)
-            fontSize: 20
-            marginLeft: 0
-            marginTop: 75
-            fontWeight: bold
-          index: 3550  
+      - Image:
+          source: https://cdnb.artstation.com/p/assets/images/images/011/040/705/original/ismael-gil-death.gif?1527559338
+          style: 
+            width: 50%
+            height: 50%
 - View:
     style:
       flex: 2
       backgroundColor: black
-      justifyContent: space-around
       alignItems: center    
     children:
       - Button:
@@ -45,14 +40,5 @@
                     fontSize: 15
                     marginTop: 14
                     fontWeight: bold
-                  index: 1320
-
-- View:
-    style:
-      flex: 1
-      backgroundColor: black
-      justifyContent: space-around
-      alignItems: center
-          
-      
+                  index: 1330
 
