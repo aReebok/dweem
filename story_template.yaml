@@ -20,6 +20,7 @@
             marginTop: -20
             marginRight: -20
           index: 1290
+          
 - View:
     style:
       flex: 20
