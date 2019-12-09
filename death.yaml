@@ -1,0 +1,44 @@
+- View:
+    style:
+      flex: 7
+      backgroundColor: black
+      alignItems: center
+    children:
+      - Image:
+          source: https://i.redd.it/84v93ejlx7l31.png
+          style: 
+            width: 75%
+            top: 30
+            height: 50%
+      - Image:
+          source: https://cdnb.artstation.com/p/assets/images/images/011/040/705/original/ismael-gil-death.gif?1527559338
+          style: 
+            width: 50%
+            height: 50%
+- View:
+    style:
+      flex: 2
+      backgroundColor: black
+      alignItems: center    
+    children:
+      - Button:
+            id: button_000
+            style:
+              width: 100
+              height: 50
+              borderRadius: 25
+              borderWidth: 2
+              backgroundColor: rgb(81,36,23)
+              alignItems: center
+              top: 10
+            on_touch:
+              backgroundColor: rgb(254, 150, 150)
+            children:
+              - Text:
+                  style:
+                    color: white
+                    fontSize: 15
+                    marginTop: 14
+                    fontWeight: bold
+                  index: 1330
+

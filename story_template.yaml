@@ -1,0 +1,138 @@
+- View:
+    style:
+      flex: 3
+      backgroundColor: black
+      justifyContent: space-around
+
+    children:
+      - Text:
+          style:
+            color: red
+            fontSize: 15
+            marginTop: 0
+            marginRight: -20
+          index: 1240
+      - Text:
+          style:
+            justifyContent: space-around
+            color: blue
+            fontSize: 15
+            marginTop: -20
+            marginRight: -20
+          index: 1290
+          
+- View:
+    style:
+      flex: 20
+      backgroundColor: black
+      justifyContent: space-around
+      alignItems: center
+    children:
+      - Image:
+          source: {bgimg}
+          style: 
+            width: 100%
+            height: 100%
+            top: {bgTop}
+      - Image:
+          source: {charimg}
+          style: 
+            width: 120%
+            height: 120%
+            top: {charTop}
+            right: {charRight}
+      - Image:
+          source:  {enmimg}
+          style: 
+            width: 90
+            height: 180
+            top: -75
+            right: -110
+      - Text:
+          style:
+            color: rgb(244,242,189)
+            fontSize: 10
+            marginLeft: 10
+            marginRight: 10
+            justifyContent: space-around
+            alignItems: center
+            fontWeight: bold
+          index: 10
+- View:
+    style:
+      flex: 8
+      backgroundColor: rgb(4, 42, 63)
+      justifyContent: space-around
+      alignItems: center
+    children:
+      - Text:
+          style:
+            color: rgb(244,242,189)
+            fontSize: 10
+            marginLeft: 10
+            marginTop: 10
+          index: {paraIndex}
+      - Button:
+          id: button_next
+          style:
+            width: 30
+            height: 30
+            borderRadius: 15
+            borderWidth: 2
+            backgroundColor: rgb(118, 163, 148)
+            alignItems: center
+          on_touch:
+            backgroundColor: rgb(118, 200, 148)
+          children:
+            - Text:
+                style:
+                  color: black
+                  fontSize: 15
+                  marginTop: 3
+                index: 1100
+- View:
+    style:
+      flex: 4
+      flexDirection: row
+      backgroundColor: black
+    children: 
+      - Button:
+          id: button_settings
+          style:
+            width: 50
+            height: 50
+            right: -10
+            top: 5
+            borderRadius: 25
+            borderWidth: 2
+            backgroundColor: rgb(118,163,148)
+            alignItems: center
+          on_touch:
+            backgroundColor: rgb(118, 200, 148)
+          children:
+            - Text:
+                style:
+                  color: black
+                  fontSize: 10
+                  marginTop: 14
+                index: 1200
+      - Button:
+          id: button_help
+          style:
+            width: 50
+            height: 50
+            right: -210
+            top: 5
+            borderRadius: 25
+            borderWidth: 2
+            backgroundColor: rgb(118,163,148)
+            alignItems: center
+          on_touch:
+            backgroundColor: rgb(118, 200, 148)
+          children:
+            - Text:
+                style:
+                  color: black
+                  fontSize: 10
+                  marginTop: 14
+                index: 1220

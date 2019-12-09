@@ -1,0 +1,66 @@
+- View:
+    style:
+      flex: 7
+      backgroundColor: black
+      justifyContent: space-around
+      alignItems: center
+    children:
+      - Image:
+          source:
+          style: 
+            width: 75%
+            height: 50%
+            top: 75
+      - Text:
+          style:
+            color: white
+            fontSize: 20
+            marginLeft: 0
+            marginTop: 75
+            fontWeight: bold
+          index: 1400  
+      - Text:
+          style:
+            color: white
+            fontSize: 10
+            marginLeft: 0
+            marginTop: 75
+            fontWeight: bold
+          index: 1420
+- View:
+    style:
+      flex: 2
+      backgroundColor: black
+      justifyContent: space-around
+      alignItems: center    
+    children:
+      - Button:
+            id: button_000
+            style:
+              width: 100
+              height: 50
+              borderRadius: 25
+              borderWidth: 2
+              backgroundColor: rgb(81,36,23)
+              alignItems: center
+              top: 10
+            on_touch:
+              backgroundColor: rgb(254, 150, 150)
+            children:
+              - Text:
+                  style:
+                    color: white
+                    fontSize: 15
+                    marginTop: 14
+                    fontWeight: bold
+                  index: 1320
+
+- View:
+    style:
+      flex: 1
+      backgroundColor: black
+      justifyContent: space-around
+      alignItems: center
+          
+      
+
