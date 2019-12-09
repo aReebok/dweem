@@ -1,9 +1,5 @@
 #include"../react.h"
-<<<<<<< HEAD
 //#include"Entity2.h"
-=======
-#include"Entity2.h"
->>>>>>> 2d44fdc6ebef508e07ec13eb21c8b55320a0ad22
 
 int main() {
     init();
@@ -56,7 +52,7 @@ int main() {
         if (event_id_is("cancel")) x = 1;
         if (event_id_is("elf")) x = 3;
         if (event_id_is("dwarf")) {x = 4;}
-        if (event_id_is("confirm"))
+        /*if (event_id_is("confirm"))
         {
             if (x == 2)
             {
