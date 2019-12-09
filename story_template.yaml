@@ -70,7 +70,7 @@
             fontSize: 10
             marginLeft: 10
             marginTop: 10
-          index: 1100
+          index: {paraIndex}
       - Button:
           id: button_next
           style:
