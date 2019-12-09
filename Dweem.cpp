@@ -53,28 +53,55 @@ int main() {
     global_mem[2402] = '\0';
     const int buttonIndex = 520;
 
+    const int health_index = 410;
+    const int mana_index = 450;
+    const int exit_index = 490;
+    const int menu_index = 810;
+    const int text_index = 8000;
+    const int settings_index = 890;
+    const int help_index = 920;
+
+    const int attack_index = 940;
+    const int item_index = 960;
+    const int leave_index = 980;
+    const int talk_index = 1000;
+
+
+
+    //STARTING MENU PRINTING
     print_at(240, "Dweem Conquest");
     print_at(5, "start");
-
     print_at(20, "human");
     print_at(170, "elf");
     print_at(180, "dwarf");
-
     print_at(30, "confirm");
     print_at(110, "cancel");
-
     print_at(40, "strength: +2");
     print_at(60, "speed: +2");
     print_at(70, "dexterity: +2");
-
     print_at(120, "speed: +3");
     print_at(130, "intelligence: +1");
     print_at(150, "wisdom: +2");
-
     print_at(190, "strength: +3");
     print_at(210, "speed: +1");
     print_at(220, "dexterity: +2");
 
+    //FIGHT PRINTING
+    print_at(attack_index, "attack");
+    print_at(item_index, "item");
+    print_at(talk_index, "speak");
+    print_at(leave_index, "flee");
+
+// HEALTH AND MANA STATS::
+    print_at(health_index,"  health  ************" );
+    print_at(mana_index, "  mana  ************");
+    print_at(exit_index,"back");
+    print_at (menu_index,"menu");
+    print_at (text_index, ">");
+    print_at(settings_index, "settings");
+    print_at(help_index, "help");
+
+    //STATS SELECTION PRINTING
     print_at(index0, "Strength:");
     print_at(index1, "Speed:");
     print_at(index2, "Dexterity:");
@@ -83,6 +110,8 @@ int main() {
     print_at(index5, "Charisma:");
     print_at(buttonIndex, "Choose Character!");
 
+
+    vector <float> chosen_stats = {0,0,0,0,0,0};
     if (just_starting()) {x = 0;}
 
     if (received_event()) {
@@ -124,7 +153,6 @@ int main() {
         {
             if (x == 2)
             {
-                vector <float> chosen_stats = {0,0,0,0,0,0};
                 ifstream f("chosen_stats.txt");
                 int n;
                 int i = 0;
@@ -138,6 +166,36 @@ int main() {
                 Human H(chosen_stats[0], chosen_stats[1], chosen_stats[2], chosen_stats[3], chosen_stats[4], chosen_stats[5]);
                 H.display_in_file();
             }
+            if (x == 3)
+            {
+                ifstream f("chosen_stats.txt");
+                int n;
+                int i = 0;
+                string s;
+                while (i < 6)
+                {
+                    f >> n;
+                    chosen_stats[i] = n;
+                    i++;
+                }
+                Elf E(chosen_stats[0], chosen_stats[1], chosen_stats[2], chosen_stats[3], chosen_stats[4], chosen_stats[5]);
+                E.display_in_file();
+            }
+            if (x == 4)
+            {
+                ifstream f("chosen_stats.txt");
+                int n;
+                int i = 0;
+                string s;
+                while (i < 6)
+                {
+                    f >> n;
+                    chosen_stats[i] = n;
+                    i++;
+                }
+                Dwarf D(chosen_stats[0], chosen_stats[1], chosen_stats[2], chosen_stats[3], chosen_stats[4], chosen_stats[5]);
+                D.display_in_file();
+            }
             x = 7;
         }
     }
@@ -148,7 +206,7 @@ int main() {
     if (x == 2) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-shovel-knight-sprite-png-5030555.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", hbonus1}, {"bonus2", hbonus2}, {"bonus3", hbonus3}});}
     if (x == 3) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-elf-png-51586.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", ebonus1}, {"bonus2", ebonus2}, {"bonus3", ebonus3}});}
     if (x == 4) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-dwarf-token-png-4433841.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", dbonus1}, {"bonus2", dbonus2}, {"bonus3", dbonus3}});}
-    if (x == 7) {add_yaml("final_screen.yaml");}
+    if (x == 7) {add_yaml("fight_template.yaml", {{"health", health_index}, {"mana", mana_index}, {"exit", exit_index}, {"menu", menu_index}, {"text", text_index}, {"settings", settings_index}, {"help", help_index}, {"attack", attack_index}, {"item", item_index}, {"talk", talk_index}, {"leave", leave_index}});}
 
     quit();
 }
