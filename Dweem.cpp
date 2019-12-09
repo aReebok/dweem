@@ -3,79 +3,7 @@
 #include"Entity2.cpp"
 #include<vector>
 
-void display_enemy_health(int enemy_health_index)
-{
-    int health;
-    ifstream f("Enemy.txt");
-    f >> health;
-    f.close();
-
-    print_at(enemy_health_index,"  health  " );
-
-    for (int i = 0; i < health; i++)
-    {
-        print_at(enemy_health_index+10+i,"*" );
-    }
-}
-
-void display_health(int health_index)
-{
-    int health;
-    ifstream f("Character.txt");
-    f >> health;
-    f.close();
-
-    print_at(health_index,"  health  " );
-
-    for (int i = 0; i < health; i++)
-    {
-        print_at(health_index+10+i,"*" );
-    }
-}
-
-void attack()
-{
-    ifstream c("Character.txt");
-    int char_health;
-    c >> char_health;
-    c.get();
-    int char_strength;
-    string s;
-    while (c >> s)
-    {
-        c.get();
-        int n;
-        c >> n;
-        if (s == "strength")
-        {
-            char_strength = n;
-        }
-    }
-    c.close();
-
-    ifstream e("Enemy.txt");
-    int enemy_health;
-    e >> enemy_health;
-    e.get();
-    int enemy_strength;
-    string d;
-    while (e >> d)
-    {
-        e.get();
-        int n;
-        e >> n;
-        if (d == "strength")
-        {
-            enemy_strength = n;
-        }
-    }
-    e.close();
-
-    enemy_health -= char_strength/10;
-
-}
-
-vector <float> chosen_stats = {0,0,0,0,0,0};
+    vector <float> chosen_stats = {0,0,0,0,0,0};
 int main() {
     init();
     int &x = int_at(1500);
@@ -132,8 +60,6 @@ int main() {
     const int text_index = 8000;
     const int settings_index = 890;
     const int help_index = 920;
-    const int enemy_health_index = 1100;
-    const int enemy_mana_index = 1150;
 
     const int attack_index = 940;
     const int item_index = 960;
@@ -167,16 +93,13 @@ int main() {
     print_at(leave_index, "flee");
 
 // HEALTH AND MANA STATS::
-
-    display_health(health_index);
-    print_at(mana_index, "  mana  *********");
+    print_at(health_index,"  health  ************" );
+    print_at(mana_index, "  mana  ************");
     print_at(exit_index,"back");
     print_at (menu_index,"menu");
     print_at (text_index, ">");
     print_at(settings_index, "settings");
     print_at(help_index, "help");
-    display_enemy_health(enemy_health_index);
-    print_at(enemy_mana_index, " mana **********");
 
     //STATS SELECTION PRINTING
     print_at(index0, "Strength:");
@@ -222,11 +145,11 @@ int main() {
             }
             f.close();
         }
-        if (event_id_is("human")) x = 2; // choose human
-        if (event_id_is("cancel")) x = 1; // go back to race choice
-        if (event_id_is("elf")) x = 3; // choose elf
-        if (event_id_is("dwarf")) {x = 4;} // choose dwarf
-        if (event_id_is("confirm")) // confirm character race
+        if (event_id_is("human")) x = 2;
+        if (event_id_is("cancel")) x = 1;
+        if (event_id_is("elf")) x = 3;
+        if (event_id_is("dwarf")) {x = 4;}
+        if (event_id_is("confirm")) 
         {
             if (x == 2)
             {
@@ -275,10 +198,6 @@ int main() {
             }
             x = 7;
         }
-        if (event_id_is("button_attack"))
-        {
-            attack();
-        }
     }
 
     if (x == 0) {add_yaml("startingmenu.yaml", {{"startmain", startmain}, {"title", title}});}
@@ -287,12 +206,7 @@ int main() {
     if (x == 2) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-shovel-knight-sprite-png-5030555.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", hbonus1}, {"bonus2", hbonus2}, {"bonus3", hbonus3}});}
     if (x == 3) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-elf-png-51586.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", ebonus1}, {"bonus2", ebonus2}, {"bonus3", ebonus3}});}
     if (x == 4) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-dwarf-token-png-4433841.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", dbonus1}, {"bonus2", dbonus2}, {"bonus3", dbonus3}});}
-    if (x == 7) 
-    {
-        Witch W(5);
-        W.display_in_file();
-        add_yaml("fight_template.yaml", {{"health", health_index}, {"mana", mana_index}, {"exit", exit_index}, {"menu", menu_index}, {"text", text_index}, {"settings", settings_index}, {"help", help_index}, {"attack", attack_index}, {"item", item_index}, {"talk", talk_index}, {"leave", leave_index}, {"enemy_health", enemy_health_index}, {"enemy_mana", enemy_mana_index}});
-    }
+    if (x == 7) {add_yaml("fight_template.yaml", {{"health", health_index}, {"mana", mana_index}, {"exit", exit_index}, {"menu", menu_index}, {"text", text_index}, {"settings", settings_index}, {"help", help_index}, {"attack", attack_index}, {"item", item_index}, {"talk", talk_index}, {"leave", leave_index}});}
 
     quit();
 }
