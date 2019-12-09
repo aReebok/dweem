@@ -6,19 +6,27 @@
       alignItems: center
     children:
       - Image:
-          source: https://i.redd.it/84v93ejlx7l31.png
+          source:
           style: 
             width: 75%
             height: 50%
             top: 75
       - Text:
           style:
-            color: rgb(81,36,23)
+            color: white
             fontSize: 20
             marginLeft: 0
             marginTop: 75
             fontWeight: bold
-          index: 3550  
+          index: 1400  
+      - Text:
+          style:
+            color: white
+            fontSize: 10
+            marginLeft: 0
+            marginTop: 75
+            fontWeight: bold
+          index: 1420
 - View:
     style:
       flex: 2
