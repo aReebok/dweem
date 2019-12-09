@@ -11,7 +11,7 @@
             fontSize: 15
             marginTop: 0
             marginRight: -20
-          index: 1240
+          index: {health}
       - Text:
           style:
             justifyContent: space-around
@@ -19,7 +19,23 @@
             fontSize: 15
             marginTop: -20
             marginRight: -20
-          index: 1290
+          index: {mana}
+      # - Text:
+      #     style:
+      #       justifyContent: space-around
+      #       color: red
+      #       fontSize: 10
+      #       marginTop: 100
+      #       marginLeft: 50
+      #     index: {enemy_health}
+      # - Text:
+      #     style:
+      #       justifyContent: space-around
+      #       color: blue
+      #       fontSize: 10
+      #       marginTop: 100
+      #       marginLeft: 50
+      #     index: {enemy_mana}
 - View:
     style:
       flex: 20
@@ -41,16 +57,16 @@
             top: 30
             right: 0
 
-      - Text:
-          style:
-            color: rgb(244,242,189)
-            fontSize: 10
-            marginLeft: 10
-            marginRight: 10
-            justifyContent: space-around
-            alignItems: center
-            fontWeight: bold
-          index: 10
+      # - Text:
+      #     style:
+      #       color: rgb(244,242,189)
+      #       fontSize: 10
+      #       marginLeft: 10
+      #       marginRight: 10
+      #       justifyContent: space-around
+      #       alignItems: center
+      #       fontWeight: bold
+      #     index: 10
 - View:
     style:
       flex: 4
@@ -64,7 +80,7 @@
             fontSize: 10
             marginLeft: 10
             marginTop: 10
-          index: 1100
+          index: {text}
 - View:
     style:
       flex: 4
@@ -90,7 +106,7 @@
                   color: black
                   fontSize: 15
                   marginTop: 3
-                index: 1340
+                index: {attack}
       - Button:
           id: button_item
           style:
@@ -108,7 +124,7 @@
                   color: black
                   fontSize: 15
                   marginTop: 3
-                index: 1350
+                index: {item}
       - Button:
           id: button_talk
           style:
@@ -126,7 +142,7 @@
                   color: black
                   fontSize: 15
                   marginTop: 3
-                index: 1360
+                index: {talk}
       - Button:
           id: button_leave
           style:
@@ -144,7 +160,7 @@
                   color: black
                   fontSize: 15
                   marginTop: 3
-                index: 1370
+                index: {leave}
 
 - View:
     style:
@@ -171,7 +187,7 @@
                   color: black
                   fontSize: 10
                   marginTop: 14
-                index: 1200
+                index: {settings}
       - Button:
           id: button_help
           style:
@@ -191,4 +207,4 @@
                   color: black
                   fontSize: 10
                   marginTop: 14
-                index: 1220
+                index: {help}
