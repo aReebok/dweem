@@ -7,6 +7,7 @@ using namespace std;
 #include<map>
 #include<string>
 #include<fstream>
+#include <stdio.h>
 
 class Entity{
 public:
@@ -24,6 +25,12 @@ public:
     {
         health = 10;
         stats = {{"strength", str}, {"speed", sp}, {"dexterity", dex}, {"intelligence", intel}, {"wisdom", wis}, {"charisma", ch}};
+    }
+
+    Entity(int lvl)
+    {
+        health = 10 + lvl;
+        stats = {{"strength", lvl*3}, {"speed", lvl*3}, {"dexterity", lvl*3}, {"intelligence", lvl*3}, {"wisdom", lvl*3}, {"charisma", lvl*3}};
     }
 
     void attack();
@@ -92,15 +99,15 @@ public:
     void display_in_file();
 };
 
-// class Ogre : public Entity{
-//     string race = "Ogre";
-// public:
+class Witch : public Entity{
+    string race = "Witch";
+public:
 
-//     Ogre() 
+    Witch() {}; 
 
-//     Ogre(int lvl) {
-        
-//     }
-// };
+    Witch(int lvl) : Entity(lvl) {}
+
+    void display_in_file();
+};
 
 #endif //_ENTITY_H_

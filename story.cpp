@@ -1,6 +1,4 @@
 #include"../react.h"
-#include <iostream>
-using namespace std;
 
 int main() {
   init();
@@ -33,6 +31,30 @@ But you can probably defeat him!\n\
 engage!");
 
 
+
+    const int health_index = 410;
+    const int mana_index = 450;
+    const int exit_index = 490;
+    const int menu_index = 810;
+    const int text_index = 8000;
+    const int settings_index = 890;
+    const int help_index = 920;
+    const int arr [] = {0,1000,2,3,4,5};
+    int counter = 0;
+
+    const int attack_index = 940;
+    const int item_index = 960;
+    const int leave_index = 980;
+    const int talk_index = 1000;
+
+    print_at(health_index,"  health  ************" );
+    print_at(mana_index, "  mana  ************");
+    print_at(exit_index,"back");
+    print_at (menu_index,"menu");
+    print_at (text_index, ">");
+    print_at(settings_index, "settings");
+    print_at(help_index, "help");
+
   int state = 0;
   int prev = 0;
   
@@ -44,14 +66,20 @@ engage!");
     if (event_id_is("button_help")) {
       prev = state;
       state = 99;
-      cerr << "prev / state : " << prev << " / " << state;
     }
-    if (event_id_is("button_000")) state = prev;
-    if (event_id_is("button_next")) state = 2;
+
+    if (event_id_is("button_000")) {
+      counter += 1;
+      state = arr[counter];
+    }
+
+    if (event_id_is("button_next")) {
+      counter += 1;
+      state = arr[counter];
+    }
   }
 
   if (state == 0) {
-    prev = state;
     string bgimg = "https://i.pinimg.com/originals/89/fa/82/89fa825239b04567aa4b0b2bcf7c05b7.gif";
     string charimg = "https://cdna.artstation.com/p/assets/images/images/011/040/706/original/ismael-gil-sprite-walk.gif?1527559340";
     string enmimg = "";
@@ -62,12 +90,10 @@ engage!");
     add_yaml("story_template.yaml",{{"bgimg", bgimg},{"charimg", charimg},\
     {"bgTop",bgTop},{"charTop", charTop}, {"charRight", charRight},\
     {"enmimg",enmimg},{"paraIndex",ParaIndex}});
-
   }
   if (state == 99) add_yaml("help.yaml");
 
-  if (state == 2) {
-    prev = state;
+  if (state == 1000) {
     string bgimg = "frame_1.png";
     string charimg = "";
     string enmimg ="enemy_s1.png";
@@ -80,9 +106,7 @@ engage!");
   {"enmimg",enmimg},{"paraIndex",ParaIndex}});
   }
 
-if (state == 3) {
-  add_yaml("fight_template.yaml");
-  }
+  //if (state == 2) {add_yaml("fight_template.yaml", {{"health", health_index}, {"mana", mana_index}, {"exit", exit_index}, {"menu", menu_index}, {"text", text_index}, {"settings", settings_index}, {"help", help_index}, {"attack", attack_index}, {"item", item_index}, {"talk", talk_index}, {"leave", leave_index}});}
 
 
   //SCENE1:

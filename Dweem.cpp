@@ -3,6 +3,32 @@
 #include"Entity2.cpp"
 #include<vector>
 
+void update_enemy_health(int enemy_health)
+{
+    int health;
+    map <string, float> enemy;
+    ifstream e("Enemy.txt");
+    e >> health;
+    e.get();
+    string s;
+    while(e >> s)
+    {
+        int n;
+        e >> n;
+        enemy.insert({s,n});
+    }
+    e.close();
+
+    ofstream en("Enemy.txt");
+    en << enemy_health << endl;
+    for (auto p : enemy)
+    {
+        en << p.first << ' ' << p.second << endl;
+    }
+    en.close();
+
+}
+
 void display_enemy_health(int enemy_health_index)
 {
     int health;
@@ -61,7 +87,9 @@ void attack()
     string d;
     while (e >> d)
     {
+
         e.get();
+        
         int n;
         e >> n;
         if (d == "strength")
@@ -73,6 +101,8 @@ void attack()
 
     enemy_health -= char_strength/10;
 
+    update_enemy_health(enemy_health);
+    cerr << enemy_health;
 }
 
 vector <float> chosen_stats = {0,0,0,0,0,0};
@@ -289,7 +319,7 @@ int main() {
     if (x == 4) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-dwarf-token-png-4433841.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", dbonus1}, {"bonus2", dbonus2}, {"bonus3", dbonus3}});}
     if (x == 7) 
     {
-        Witch W(5);
+        Witch W(4);
         W.display_in_file();
         add_yaml("fight_template.yaml", {{"health", health_index}, {"mana", mana_index}, {"exit", exit_index}, {"menu", menu_index}, {"text", text_index}, {"settings", settings_index}, {"help", help_index}, {"attack", attack_index}, {"item", item_index}, {"talk", talk_index}, {"leave", leave_index}, {"enemy_health", enemy_health_index}, {"enemy_mana", enemy_mana_index}});
     }
