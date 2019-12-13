@@ -6,7 +6,7 @@
       alignItems: stretch
     children:
       - Image:
-          source: pngfind.com-shovel-knight-sprite-png-5030555.png
+          source: pngfind.com-shovel-knight-sprite-png-5030555.png {image}
           style: 
             top: 10
             right: -10

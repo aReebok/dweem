@@ -17,6 +17,8 @@ int main()
     const int intelligenceIndex = 160;
     const int wisdomIndex = 170;
     const int charismaIndex = 180;
+
+    if(just_starting()){
     add_yaml("stats_selection.yaml", {{"index0", index0}, {"index1", index1}, {"index2", index2}, {"index3", index3}, {"index4", index4}, {"index5", index5}, {"button_index", buttonIndex}, {"StrengthInput", strengthIndex}, {"SpeedInput", speedIndex}, {"DexterityInput", dexterityIndex}, {"IntelligenceInput", intelligenceIndex}, {"WisdomInput", wisdomIndex}, {"CharismaInput", charismaIndex}});
     print_at(index0, "Strength:");
     print_at(index1, "Speed:");
@@ -24,23 +26,20 @@ int main()
     print_at(index3, "Intelligence:");
     print_at(index4, "Wisdom:");
     print_at(index5, "Charisma:");
-    print_at(buttonIndex, "View Character!");
+    print_at(buttonIndex, "View Character!");}
     
     if (received_event())
     {
         if (event_id_is("to_game"))
         {
-            float str = as_integer(130);
+            // int str = as_integer(130);
+            // int sp = as_integer(140);
+            // int dex = as_integer(150);
+            // int intel = as_integer(160);
+            // int wis = as_integer(170);
+            // int ch = as_integer(180);
 
-            float sp = as_integer(140);
-            float dex = as_integer(150);
-            float intel = as_integer(160);
-            float wis = as_integer(170);
-            float ch = as_integer(180);
-
-            Human Hal(str,sp,dex,intel,wis,ch);
-
-            add_yaml()
+            add_yaml("final_screen.yaml");
         }
     }
 
