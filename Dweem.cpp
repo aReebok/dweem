@@ -29,6 +29,58 @@ void update_enemy_health(int enemy_health)
 
 }
 
+void display_armor() {
+    int health;
+    map <string, float> player;
+    
+    ifstream p("helmetarmor.txt");
+    p >> health;
+    p.get();
+    string s;
+    while (p >>s) {
+        int n;
+        p >> n;
+        player.insert({s,n});
+    }
+
+    ifstream p1("chestarmor.txt");
+    p1 >> health;
+    p1.get();
+    string t;
+    while (p1 >> t) {
+        int n;
+        p1 >> n;
+        player.insert({t,n});
+    }
+    p1.close;
+}
+
+void display_weapon() {
+    int health;
+    map <string, float> player;
+    
+    ifstream p("swordweapon.txt");
+    p >> health;
+    p.get();
+    string s;
+    while (p >>s) {
+        int n;
+        p >> n;
+        player.insert({s,n});
+    }
+
+    ifstream p1("axeweapon.txt");
+    p1 >> health;
+    p1.get();
+    string t;
+    while (p1 >> t) {
+        int n;
+        p1 >> n;
+        player.insert({t,n});
+    }
+    p.close;
+}
+
 void display_enemy_health(int enemy_health_index)
 {
     int health;
@@ -58,8 +110,6 @@ void display_health(int health_index)
         print_at(health_index+10+i,"*" );
     }
 }
-
-//void display_armor()
 
 void attack()
 {
