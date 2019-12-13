@@ -59,6 +59,8 @@ void display_health(int health_index)
     }
 }
 
+//void display_armor()
+
 void attack()
 {
     ifstream c("Character.txt");

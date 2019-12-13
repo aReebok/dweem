@@ -1,7 +1,5 @@
 #include"../react.h"
 
-int main() {
-    init();
     int &x = int_at(1500);
 
     const int startmain = 5;
