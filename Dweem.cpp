@@ -18,7 +18,6 @@ void update_enemy_health(int enemy_health)
         enemy.insert({s,n});
     }
     e.close();
-    remove("Enemy.txt");
 
     ofstream en("Enemy.txt");
     en << enemy_health << endl;

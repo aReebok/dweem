@@ -51,7 +51,6 @@ int main() {
         if (event_id_is("cancel")) x = 1;
         if (event_id_is("elf")) x = 3;
         if (event_id_is("dwarf")) {x = 4;}
-        //if (event_id_is("confirm")) x = 6; //goes to Nick's YAML file //creats entity object 
     }
 
     if (x == 0) {add_yaml("startingmenu.yaml", {{"startmain", startmain}});}
