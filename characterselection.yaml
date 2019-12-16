@@ -10,7 +10,7 @@
           style: 
             top: 10
             width: 110
-            height: 110
+            height: 120
       - Button:
           id: human
           style:

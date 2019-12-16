@@ -21,7 +21,6 @@ void update_enemy_health(int enemy_health)
         enemy.insert({s,n});
     }
     e.close();
-    remove("Enemy.txt");
 
     ofstream en("Enemy.txt");
     en << enemy_health << endl;
@@ -31,6 +30,58 @@ void update_enemy_health(int enemy_health)
     }
     en.close();
 
+}
+
+void display_armor() {
+    int health;
+    map <string, float> player;
+    
+    ifstream p("helmetarmor.txt");
+    p >> health;
+    p.get();
+    string s;
+    while (p >>s) {
+        int n;
+        p >> n;
+        player.insert({s,n});
+    }
+
+    ifstream p1("chestarmor.txt");
+    p1 >> health;
+    p1.get();
+    string t;
+    while (p1 >> t) {
+        int n;
+        p1 >> n;
+        player.insert({t,n});
+    }
+    p1.close;
+}
+
+void display_weapon() {
+    int health;
+    map <string, float> player;
+    
+    ifstream p("swordweapon.txt");
+    p >> health;
+    p.get();
+    string s;
+    while (p >>s) {
+        int n;
+        p >> n;
+        player.insert({s,n});
+    }
+
+    ifstream p1("axeweapon.txt");
+    p1 >> health;
+    p1.get();
+    string t;
+    while (p1 >> t) {
+        int n;
+        p1 >> n;
+        player.insert({t,n});
+    }
+    p.close;
 }
 
 void display_enemy_health(int enemy_health_index)
@@ -239,7 +290,6 @@ int main() {
             if (global_mem[2400] >= 48 && global_mem[2400] <= 57 && global_mem[2401] >= 48 && global_mem[2401] <= 57) chosen_stats[5] = as_integer(2400);
             else x = 5;
 
-            int counter = 0;
             for (int i = 0; i < 6; i++)
             {
                 if (chosen_stats[i] > 18) x = 5;
