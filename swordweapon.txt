@@ -1,0 +1,7 @@
+0
+charisma 0
+dexterity 3
+intelligence 0
+speed 2
+strength 3
+wisdom 0

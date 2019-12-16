@@ -291,7 +291,6 @@ int main() {
             if (global_mem[2400] >= 48 && global_mem[2400] <= 57 && global_mem[2401] >= 48 && global_mem[2401] <= 57) chosen_stats[5] = as_integer(2400);
             else x = 5;
 
-            int counter = 0;
             for (int i = 0; i < 6; i++)
             {
                 if (chosen_stats[i] > 18) x = 5;
