@@ -14,4 +14,8 @@ SOME EXTRA NOTES:
 The Enchantment file did work at one point. The entity driver created a Human object which had a vector of Enchantment 
 items that the player could use. It worked really well in the EnchantmentDriver, however now we're getting the error of 
 underfined reference error, and we're unable to figure this out. The enchantment file would update user stats,
-and additionally deletes items after use. 
+and additionally deletes items after use.
+
+You will see a function in Dweem2.cpp called enemy_heckle.
+This function was designed to have the enemy speak with you while you fought.  This function could also be used to have the character speak
+with the enemy.
