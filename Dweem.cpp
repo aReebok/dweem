@@ -3,7 +3,114 @@
 #include"Entity2.cpp"
 #include<vector>
 
+<<<<<<< HEAD
     vector <float> chosen_stats = {0,0,0,0,0,0};
+=======
+void update_enemy_health(int enemy_health)
+{
+    int health;
+    map <string, float> enemy;
+    ifstream e("Enemy.txt");
+    e >> health;
+    e.get();
+    string s;
+    while(e >> s)
+    {
+        int n;
+        e >> n;
+        enemy.insert({s,n});
+    }
+    e.close();
+    remove("Enemy.txt");
+
+    ofstream en("Enemy.txt");
+    en << enemy_health << endl;
+    for (auto p : enemy)
+    {
+        en << p.first << ' ' << p.second << endl;
+    }
+    en.close();
+
+}
+
+void display_enemy_health(int enemy_health_index)
+{
+    int health;
+    ifstream f("Enemy.txt");
+    f >> health;
+    f.close();
+
+    print_at(enemy_health_index,"  health  " );
+
+    for (int i = 0; i < health; i++)
+    {
+        print_at(enemy_health_index+10+i,"*" );
+    }
+}
+
+void display_health(int health_index)
+{
+    int health;
+    ifstream f("Character.txt");
+    f >> health;
+    f.close();
+
+    print_at(health_index,"  health  " );
+
+    for (int i = 0; i < health; i++)
+    {
+        print_at(health_index+10+i,"*" );
+    }
+}
+
+void attack()
+{
+    ifstream c("Character.txt");
+    int char_health;
+    c >> char_health;
+    c.get();
+    int char_strength;
+    string s;
+    while (c >> s)
+    {
+        c.get();
+        int n;
+        c >> n;
+        if (s == "strength")
+        {
+            char_strength = n;
+        }
+    }
+    c.close();
+
+    ifstream e("Enemy.txt");
+    int enemy_health;
+    e >> enemy_health;
+    e.get();
+    int enemy_strength;
+    string d;
+    while (e >> d)
+    {
+
+        e.get();
+        
+        int n;
+        e >> n;
+        if (d == "strength")
+        {
+            enemy_strength = n;
+        }
+    }
+    e.close();
+
+    enemy_health -= char_strength/10;
+
+    update_enemy_health(enemy_health);
+    cerr << enemy_health;
+}
+
+vector <float> chosen_stats = {0,0,0,0,0,0};
+>>>>>>> 0e248384cfe16efac115faa3022601bbb8a45bfc
 int main() {
     init();
     int &x = int_at(1500);
@@ -206,7 +313,16 @@ int main() {
     if (x == 2) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-shovel-knight-sprite-png-5030555.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", hbonus1}, {"bonus2", hbonus2}, {"bonus3", hbonus3}});}
     if (x == 3) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-elf-png-51586.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", ebonus1}, {"bonus2", ebonus2}, {"bonus3", ebonus3}});}
     if (x == 4) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-dwarf-token-png-4433841.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", dbonus1}, {"bonus2", dbonus2}, {"bonus3", dbonus3}});}
+<<<<<<< HEAD
     if (x == 7) {add_yaml("fight_template.yaml", {{"health", health_index}, {"mana", mana_index}, {"exit", exit_index}, {"menu", menu_index}, {"text", text_index}, {"settings", settings_index}, {"help", help_index}, {"attack", attack_index}, {"item", item_index}, {"talk", talk_index}, {"leave", leave_index}});}
+=======
+    if (x == 7) 
+    {
+        Witch W(4);
+        W.display_in_file();
+        add_yaml("fight_template.yaml", {{"health", health_index}, {"mana", mana_index}, {"exit", exit_index}, {"menu", menu_index}, {"text", text_index}, {"settings", settings_index}, {"help", help_index}, {"attack", attack_index}, {"item", item_index}, {"talk", talk_index}, {"leave", leave_index}, {"enemy_health", enemy_health_index}, {"enemy_mana", enemy_mana_index}});
+    }
+>>>>>>> 0e248384cfe16efac115faa3022601bbb8a45bfc
 
     quit();
 }
