@@ -11,7 +11,7 @@
             fontSize: 15
             marginTop: 0
             marginRight: -20
-          index: 1240
+          index: {health_index}
       - Text:
           style:
             justifyContent: space-around
@@ -19,7 +19,7 @@
             fontSize: 15
             marginTop: -20
             marginRight: -20
-          index: 1290
+          index: {mana_index}
           
 - View:
     style:
@@ -42,7 +42,7 @@
             top: {charTop}
             right: {charRight}
       - Image:
-          source:  {enmimg}
+          source: {enmimg}
           style: 
             width: 90
             height: 180
@@ -89,7 +89,7 @@
                   color: black
                   fontSize: 15
                   marginTop: 3
-                index: 1100
+                index: {next_index}
 - View:
     style:
       flex: 4
@@ -115,7 +115,7 @@
                   color: black
                   fontSize: 10
                   marginTop: 14
-                index: 1200
+                index: {settings_index}
       - Button:
           id: button_help
           style:
@@ -135,4 +135,4 @@
                   color: black
                   fontSize: 10
                   marginTop: 14
-                index: 1220
+                index: {help_index}

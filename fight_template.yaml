@@ -3,7 +3,6 @@
       flex: 3
       backgroundColor: white
       justifyContent: space-around
-
     children:
       - Text:
           style:
@@ -20,22 +19,6 @@
             marginTop: -20
             marginRight: -20
           index: {mana}
-      # - Text:
-      #     style:
-      #       justifyContent: space-around
-      #       color: red
-      #       fontSize: 10
-      #       marginTop: 100
-      #       marginLeft: 50
-      #     index: {enemy_health}
-      # - Text:
-      #     style:
-      #       justifyContent: space-around
-      #       color: blue
-      #       fontSize: 10
-      #       marginTop: 100
-      #       marginLeft: 50
-      #     index: {enemy_mana}
 - View:
     style:
       flex: 20
@@ -67,6 +50,25 @@
       #       alignItems: center
       #       fontWeight: bold
       #     index: 10
+- View:
+    style:
+      flex: 2
+      backgroundColor: purple
+      justifyContent: space-around
+      flexDirection: row
+    children:
+      - Text:
+          style:
+            color: red
+            fontSize: 18
+            marginRight: 0
+          index: {enemy_health}
+      - Text:
+          style:
+            color: blue
+            fontSize: 18
+            marginRight: -20
+          index: {enemy_mana}
 - View:
     style:
       flex: 4
@@ -208,3 +210,10 @@
                   fontSize: 10
                   marginTop: 14
                 index: {help}
+# - Text:
+#     style:
+#       color: green
+#       fontSize: 10
+#       marginTop: 50
+#       marginRight: -20
+#     index: {enemy_health}

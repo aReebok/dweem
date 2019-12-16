@@ -63,7 +63,7 @@ public:
 
 class Dwarf : public Entity{
     string race = "Dwarf";
-    map <string, float> special_stats = {{"strength", 3}, {"speed", 1}, {"dexterity", 2}, {"intelligence", 0}, {"wisdom", 0}, {"charisma", 0}};
+    map <string, float> special_stats = {{"strength", 10}, {"speed", 1}, {"dexterity", 2}, {"intelligence", 0}, {"wisdom", 0}, {"charisma", 0}};
 public:
     Dwarf() {};
 

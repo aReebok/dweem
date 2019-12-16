@@ -1,7 +1,7 @@
 12
-charisma 12
-dexterity 12
-intelligence 12
-speed 12
-strength 12
-wisdom 12
+charisma 9
+dexterity 9
+intelligence 9
+speed 9
+strength 9
+wisdom 9

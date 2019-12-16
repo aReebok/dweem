@@ -3,6 +3,11 @@
 #include"Entity2.cpp"
 #include<vector>
 
+
+void verbal_attack()
+{
+
+}
 void update_enemy_health(int enemy_health)
 {
     int health;
@@ -15,6 +20,7 @@ void update_enemy_health(int enemy_health)
     {
         int n;
         e >> n;
+        e.get();
         enemy.insert({s,n});
     }
     e.close();
@@ -56,6 +62,36 @@ void display_health(int health_index)
     for (int i = 0; i < health; i++)
     {
         print_at(health_index+10+i,"*" );
+    }
+}
+
+void display_enemy_mana(int enemy_mana_index)
+{
+    int mana;
+    ifstream f("Enemy.txt");
+    f >> mana;
+    f.close();
+
+    print_at(enemy_mana_index,"  mana  " );
+
+    for (int i = 0; i < mana; i++)
+    {
+        print_at(enemy_mana_index+8+i,"*" );
+    }
+}
+
+void display_mana(int mana_index)
+{
+    int mana;
+    ifstream f("Character.txt");
+    f >> mana;
+    f.close();
+
+    print_at(mana_index,"  mana  " );
+
+    for (int i = 0; i < mana; i++)
+    {
+        print_at(mana_index+8+i,"*" );
     }
 }
 
@@ -101,8 +137,7 @@ void attack()
 
     enemy_health -= char_strength/10;
 
-    update_enemy_health(enemy_health);
-    cerr << enemy_health;
+    if (enemy_health > 0) update_enemy_health(enemy_health);
 }
 
 vector <float> chosen_stats = {0,0,0,0,0,0};
@@ -201,14 +236,14 @@ int main() {
 // HEALTH AND MANA STATS::
 
     display_health(health_index); // function that displays health
-    print_at(mana_index, "  mana  *********");
+    display_mana(mana_index);
     print_at(exit_index,"back");
     print_at (menu_index,"menu");
     print_at (text_index, ">");
     print_at(settings_index, "settings");
     print_at(help_index, "help");
     display_enemy_health(enemy_health_index); // function that displays enemy health
-    print_at(enemy_mana_index, " mana **********");
+    display_enemy_mana(enemy_mana_index);
 
     //STATS SELECTION PRINTING
     print_at(index0, "Strength:");
@@ -223,7 +258,7 @@ int main() {
     print_at(help_index, "help");
 
     //story button indecies
-    print_at (next_index, ">"); // next button 
+    print_at (next_index, " > "); // next button 
     // HEALTH AND MANA STATS::
     //help button has a back button with this label:
     print_at (instructions_index, " Click on '>' button to procceed with story.\n Use button 'engage' to confront enemies.");
@@ -231,25 +266,29 @@ int main() {
     //STORY PLOT ---
 
     vector <float> chosen_stats = {0,0,0,0,0,0};
-    if (just_starting()) {x = 0;}
+    if (just_starting()) {
+        x = 0;
+        Witch W(3);
+        W.display_in_file();
+    }
 
     if (received_event()) {
         if (event_id_is("startgame")) x = 5;
         if (event_id_is("choose_character"))
         {
             x = 1;
-            // if (global_mem[400] >= 48 && global_mem[400] <= 57 && global_mem[401] >= 48 && global_mem[401] <= 57) chosen_stats[0] = as_integer(400);
-            // else x = 5;
-            // if (global_mem[800] >= 48 && global_mem[800] <= 57 && global_mem[801] >= 48 && global_mem[801] <= 57) chosen_stats[1] = as_integer(800);
-            // else x = 5;
-            // if (global_mem[1200] >= 48 && global_mem[1200] <= 57 && global_mem[1201] >= 48 && global_mem[1201] <= 57) chosen_stats[2] = as_integer(1200);
-            // else x = 5;
-            // if (global_mem[1600] >= 48 && global_mem[1600] <= 57 && global_mem[1601] >= 48 && global_mem[1601] <= 57) chosen_stats[3] = as_integer(1600);
-            // else x = 5;
-            // if (global_mem[2000] >= 48 && global_mem[2000] <= 57 && global_mem[2001] >= 48 && global_mem[2001] <= 57) chosen_stats[4] = as_integer(2000);
-            // else x = 5;
-            // if (global_mem[2400] >= 48 && global_mem[2400] <= 57 && global_mem[2401] >= 48 && global_mem[2401] <= 57) chosen_stats[5] = as_integer(2400);
-            // else x = 5;
+            if (global_mem[400] >= 48 && global_mem[400] <= 57 && global_mem[401] >= 48 && global_mem[401] <= 57) chosen_stats[0] = as_integer(400);
+            else x = 5;
+            if (global_mem[800] >= 48 && global_mem[800] <= 57 && global_mem[801] >= 48 && global_mem[801] <= 57) chosen_stats[1] = as_integer(800);
+            else x = 5;
+            if (global_mem[1200] >= 48 && global_mem[1200] <= 57 && global_mem[1201] >= 48 && global_mem[1201] <= 57) chosen_stats[2] = as_integer(1200);
+            else x = 5;
+            if (global_mem[1600] >= 48 && global_mem[1600] <= 57 && global_mem[1601] >= 48 && global_mem[1601] <= 57) chosen_stats[3] = as_integer(1600);
+            else x = 5;
+            if (global_mem[2000] >= 48 && global_mem[2000] <= 57 && global_mem[2001] >= 48 && global_mem[2001] <= 57) chosen_stats[4] = as_integer(2000);
+            else x = 5;
+            if (global_mem[2400] >= 48 && global_mem[2400] <= 57 && global_mem[2401] >= 48 && global_mem[2401] <= 57) chosen_stats[5] = as_integer(2400);
+            else x = 5;
 
             for (int i = 0; i < 6; i++)
             {
@@ -281,6 +320,7 @@ int main() {
                     chosen_stats[i] = n;
                     i++;
                 }
+                f.close();
                 Human H(chosen_stats[0], chosen_stats[1], chosen_stats[2], chosen_stats[3], chosen_stats[4], chosen_stats[5]);
                 H.display_in_file();
             }
@@ -296,6 +336,7 @@ int main() {
                     chosen_stats[i] = n;
                     i++;
                 }
+                f.close();
                 Elf E(chosen_stats[0], chosen_stats[1], chosen_stats[2], chosen_stats[3], chosen_stats[4], chosen_stats[5]);
                 E.display_in_file();
             }
@@ -311,6 +352,7 @@ int main() {
                     chosen_stats[i] = n;
                     i++;
                 }
+                f.close();
                 Dwarf D(chosen_stats[0], chosen_stats[1], chosen_stats[2], chosen_stats[3], chosen_stats[4], chosen_stats[5]);
                 D.display_in_file();
             }
@@ -319,6 +361,12 @@ int main() {
         if (event_id_is("button_attack"))
         {
             attack();
+            display_enemy_health(enemy_health_index);
+            display_enemy_mana(enemy_mana_index);
+        }
+        if (event_id_is("button_talk"))
+        {
+            verbal_attack();
         }
         if (event_id_is("button_help")) {
             x = 9;
@@ -346,8 +394,6 @@ int main() {
     if (x == 4) {add_yaml("characterconfirm.yaml", {{"image", "pngfind.com-dwarf-token-png-4433841.png"}, {"confirm", confirm}, {"cancel", cancel}, {"bonus1", dbonus1}, {"bonus2", dbonus2}, {"bonus3", dbonus3}});}
     if (x == 8) 
     {
-        Witch W(4);
-        W.display_in_file();
         add_yaml("fight_template.yaml", {{"health", health_index}, {"mana", mana_index}, {"exit", exit_index}, {"menu", menu_index}, {"text", text_index}, {"settings", settings_index}, {"help", help_index}, {"attack", attack_index}, {"item", item_index}, {"talk", talk_index}, {"leave", leave_index}, {"enemy_health", enemy_health_index}, {"enemy_mana", enemy_mana_index}});
     }
 
@@ -359,7 +405,7 @@ int main() {
         signed int charTop = -80;
         signed int charRight = 110;
         print_at(story_index,"Hello, you're running through the woods.\n\
-        Cool you hear something down the road\n\
+        Cool... you hear something down the road\n\
         you keep running lol ok.......");
         add_yaml("story_template.yaml",{{"bgimg", bgimg},{"charimg", charimg},\
         {"bgTop",bgTop},{"charTop", charTop}, {"charRight", charRight},\
