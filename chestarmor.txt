@@ -2,6 +2,6 @@
 charisma 0
 dexterity 3
 intelligence 0
-speed 1
-strength 1
+speed 0
+strength 0
 wisdom 0

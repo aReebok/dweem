@@ -29,57 +29,80 @@ void update_enemy_health(int enemy_health)
 
 }
 
-void display_armor() {
+/*
+void display_armor1() {
     int health;
     map <string, float> player;
     
-    ifstream p("helmetarmor.txt");
-    p >> health;
-    p.get();
+    ifstream g("helmetarmor.txt");
+    g >> health;
+    g.get();
     string s;
-    while (p >>s) {
+    while (g >>s) {
         int n;
-        p >> n;
+        g >> n;
         player.insert({s,n});
     }
-
-    ifstream p1("chestarmor.txt");
-    p1 >> health;
-    p1.get();
-    string t;
-    while (p1 >> t) {
-        int n;
-        p1 >> n;
-        player.insert({t,n});
-    }
-    p1.close;
+    g.close;
 }
 
-void display_weapon() {
+void display_armor2() {
     int health;
+    float dexterity;
+    map <string, float> player;
+
+    ifstream h("chestarmor.txt");
+    h >> health;
+    h >> dexterity;
+    h.get();
+    string t;
+    while (h >> t) {
+        int n;
+        h >> n;
+        player.insert({t,n});
+    }
+    h.close;
+}
+
+void display_weapon1() {
+    int health;
+    float dexterity, speed, strength;
     map <string, float> player;
     
-    ifstream p("swordweapon.txt");
-    p >> health;
-    p.get();
+    ifstream o("swordweapon.txt");
+    o >> health;
+    o >> dexterity;
+    o >> speed;
+    o >> strength;
+    o.get();
     string s;
-    while (p >>s) {
+    while (o >>s) {
         int n;
-        p >> n;
+        o >> n;
         player.insert({s,n});
     }
+    o.close;
+}
 
-    ifstream p1("axeweapon.txt");
-    p1 >> health;
-    p1.get();
+void display_weapon2() {
+    int health;
+    float dexterity, strength;
+    map <string, float> player;
+    
+    ifstream d("axeweapon.txt");
+    d >> health;
+    d >> dexterity;
+    d >> strength;
+    d.get();
     string t;
-    while (p1 >> t) {
+    while (d >> t) {
         int n;
-        p1 >> n;
+        d >> n;
         player.insert({t,n});
     }
-    p.close;
+    d.close;
 }
+*/
 
 void display_enemy_health(int enemy_health_index)
 {
