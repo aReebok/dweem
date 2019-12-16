@@ -4,24 +4,24 @@
 #include<vector>
 
 
-// string enemy_heckle()
-// {
-//     vector <string> heckles;
-//     string file = "Heckles.txt";
-//     ifstream vocabulary(file);
-//     int n = 0;
-//     string s;
-//     while (n < 4)
-//     {
-//         getline(vocabulary, s);
-//         vocabulary.get();
-//         heckles.push_back(s);
-//         n++;
-//     }
-//     int r = rand() % n+1;
-//     vocabulary.close();
-//     return heckles[r];
-// }
+string enemy_heckle()
+{
+    vector <string> heckles;
+    string file = "Heckles.txt";
+    ifstream vocabulary(file);
+    int n = 0;
+    string s;
+    while (n < 3)
+    {
+        getline(vocabulary, s);
+        vocabulary.get();
+        heckles.push_back(s);
+        n++;
+    }
+    int r = rand() % n+1;
+    vocabulary.close();
+    return heckles[r];
+}
 
 void update_health(int char_health)
 {
@@ -91,7 +91,6 @@ void enemy_attack()
     e.close();
 
     char_health -= enemy_strength/10;
-    cerr << char_health;
     if (char_health > 0) update_health(char_health);
     else if (enemy_health == 0) {}
 }
@@ -503,9 +502,8 @@ int main() {
             death = attack();
             display_enemy_health(enemy_health_index);
             display_enemy_mana(enemy_mana_index);
-            // string s = enemy_heckle();
-            // print_at(story_index, s);
-            //enemy_attack();
+            string s = enemy_heckle();
+            print_at(story_index, s);
             enemy_attack();
             display_health(health_index);
             display_mana(mana_index);
