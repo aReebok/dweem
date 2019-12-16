@@ -120,7 +120,51 @@ void update_enemy_health(int enemy_health)
         en << p.first << ' ' << p.second << endl;
     }
     en.close();
+}
 
+
+void equip_armor(int armor_health) {
+    int health;
+    map <string, float> armor;
+    ifstream w("armor.txt");
+    w >> health;
+    w.get();
+    string e;
+    while (w >> e) {
+        int n;
+        w >> n;
+        armor.insert({e,n});
+    }
+
+    ofstream w1("Character.txt");
+    w1 << armor_health << endl;
+    for (auto p : armor)
+    {
+        w1 << p.first << ' ' << p.second << endl;
+    }
+    w1.close();
+}
+
+void equip_weapon(int armor_health) {
+    int health;
+    map <string, float> weapon;
+    ifstream w("weapon.txt");
+    w >> health;
+    w.get();
+    string e;
+    while (w >> e) {
+        int n;
+        w >> n;
+        weapon.insert({e,n});
+    }
+
+    ofstream w1("Character.txt");
+    w1 << armor_health << endl;
+    for (auto p : weapon)
+    {
+        w1 << p.first << ' ' << p.second << endl;
+    }
+    w1.close();
 }
 
 void display_enemy_health(int enemy_health_index)
