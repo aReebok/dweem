@@ -4,10 +4,98 @@
 #include<vector>
 
 
-void verbal_attack()
+// string enemy_heckle()
+// {
+//     vector <string> heckles;
+//     string file = "Heckles.txt";
+//     ifstream vocabulary(file);
+//     int n = 0;
+//     string s;
+//     while (n < 4)
+//     {
+//         getline(vocabulary, s);
+//         vocabulary.get();
+//         heckles.push_back(s);
+//         n++;
+//     }
+//     int r = rand() % n+1;
+//     vocabulary.close();
+//     return heckles[r];
+// }
+
+void update_health(int char_health)
 {
+    int health;
+    map <string, float> character;
+    ifstream e("Character.txt");
+    e >> health;
+    e.get();
+    string s;
+    while(e >> s)
+    {
+        int n;
+        e >> n;
+        e.get();
+        character.insert({s,n});
+    }
+    e.close();
+
+    ofstream en("Character.txt");
+    en << char_health << endl;
+    for (auto p : character)
+    {
+        en << p.first << ' ' << p.second << endl;
+    }
+    en.close();
 
 }
+
+void enemy_attack()
+{
+    ifstream c("Enemy.txt");
+    int enemy_health;
+    c >> enemy_health;
+    c.get();
+    int enemy_strength;
+    string s;
+    while (c >> s)
+    {
+        c.get();
+        int n;
+        c >> n;
+        if (s == "strength")
+        {
+            enemy_strength = n;
+        }
+    }
+    c.close();
+
+    ifstream e("Character.txt");
+    int char_health;
+    e >> char_health;
+    e.get();
+    int char_strength;
+    string d;
+    while (e >> d)
+    {
+
+        e.get();
+        
+        int n;
+        e >> n;
+        if (d == "strength")
+        {
+            char_strength = n;
+        }
+    }
+    e.close();
+
+    char_health -= enemy_strength/10;
+    cerr << char_health;
+    if (char_health > 0) update_health(char_health);
+    else if (enemy_health == 0) {}
+}
+
 void update_enemy_health(int enemy_health)
 {
     int health;
@@ -95,7 +183,7 @@ void display_mana(int mana_index)
     }
 }
 
-void attack()
+bool attack()
 {
     ifstream c("Character.txt");
     int char_health;
@@ -135,9 +223,15 @@ void attack()
     }
     e.close();
 
-    enemy_health -= char_strength/10;
+    enemy_health -= char_strength/5;
 
-    if (enemy_health > 0) update_enemy_health(enemy_health);
+    update_enemy_health(enemy_health);
+
+    if (enemy_health < 0 || enemy_health == 0)
+    {
+        return true;
+    }
+    else return false;
 }
 
 vector <float> chosen_stats = {0,0,0,0,0,0};
@@ -162,6 +256,7 @@ int main() {
     const int dbonus1 = 190;
     const int dbonus2 = 210;
     const int dbonus3 = 220;
+    int &tracker = int_at(4000);
 
     // indecies for stats_selection
     const int index0 = 260;
@@ -268,7 +363,7 @@ int main() {
     vector <float> chosen_stats = {0,0,0,0,0,0};
     if (just_starting()) {
         x = 0;
-        Witch W(3);
+        Witch W(4);
         W.display_in_file();
     }
 
@@ -360,15 +455,27 @@ int main() {
         }
         if (event_id_is("button_attack"))
         {
-            attack();
+            bool death = false;
+            death = attack();
             display_enemy_health(enemy_health_index);
             display_enemy_mana(enemy_mana_index);
+            // string s = enemy_heckle();
+            // print_at(story_index, s);
+            //enemy_attack();
+            enemy_attack();
+            display_health(health_index);
+            display_mana(mana_index);
+            if (death)
+            {
+                x = 7;
+            }
         }
         if (event_id_is("button_talk"))
         {
-            verbal_attack();
+            //verbal_attack();
         }
         if (event_id_is("button_help")) {
+            tracker = x;
             x = 9;
         }
 
@@ -382,9 +489,12 @@ int main() {
                 x = 8;
             }
         }
+
+        if (event_id_is("button_return"))
+        {
+            x = tracker;
+        }
     }
-
-
 
     if (x == 0) {add_yaml("startingmenu.yaml", {{"startmain", startmain}, {"title", title}});}
     if (x == 5) {add_yaml("stats_selection.yaml", {{"index0", index0}, {"index1", index1}, {"index2", index2}, {"index3", index3}, {"index4", index4}, {"index5", index5}, {"button_index", buttonIndex}, {"StrengthInput", strengthIndex}, {"SpeedInput", speedIndex}, {"DexterityInput", dexterityIndex}, {"IntelligenceInput", intelligenceIndex}, {"WisdomInput", wisdomIndex}, {"CharismaInput", charismaIndex}});}
@@ -412,8 +522,10 @@ int main() {
         {"enmimg",enmimg},{"paraIndex", story_index}, {"settings_index", settings_index}, {"help_index", help_index},\
         {"health_index", health_index}, {"mana_index", mana_index}});
     }
-    if (x == 9) add_yaml("help.yaml", {{"instructions_index", instructions_index}, {"exit_index", exit_index}});
-
+    if (x == 9) 
+    {
+        add_yaml("help.yaml", {{"instructions_index", instructions_index}, {"exit_index", exit_index}});
+    }
     if (x == 10) {
         string bgimg = "frame_1.png";
         string charimg = "";
