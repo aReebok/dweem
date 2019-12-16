@@ -1,4 +1,39 @@
-#include"../react.h"
+#include "../react.h"
+include <stacks>
+class Scene {
+  string bgimg, charimg, enmimg;
+  int ParaIndex;
+  signed int bgTop, charTop, charRight;
+public: 
+  Scene () {
+    bgimg = "https://i.pinimg.com/originals/89/fa/82/89fa825239b04567aa4b0b2bcf7c05b7.gif";
+    charimg = "https://cdna.artstation.com/p/assets/images/images/011/040/706/original/ismael-gil-sprite-walk.gif?1527559340";
+    enmimg = "";
+    ParaIndex = 2000;
+    bgTop = 195; // 195
+    charTop = -80;
+    charRight = 110;
+
+  }
+  Scene (string bg, string ch, string en, int para, signed int bgT, signed int charT, signed int charR){
+    bgimg = bg;
+    charimg = ch;
+    enmimg = en;
+    ParaIndex = para;
+    bgTop = bgT;
+    charTop = charT;
+    charRight = charR;
+  }
+  //methods: 
+  display_yaml() {
+    add_yaml("story_template.yaml",{{"bgimg", bgimg},{"charimg", charimg},\
+    {"bgTop",bgTop},{"charTop", charTop}, {"charRight", charRight},\
+    {"enmimg",enmimg},{"paraIndex",ParaIndex}});
+  }
+  display(){ 
+
+  }
+};
 
 int main() {
   init();
@@ -30,6 +65,22 @@ Oh!! oh NOOOOOOOOOO!!!\n\
 But you can probably defeat him!\n\
 engage!");
 
+
+
+    string bgimg = "https://i.pinimg.com/originals/89/fa/82/89fa825239b04567aa4b0b2bcf7c05b7.gif";
+    string charimg = "https://cdna.artstation.com/p/assets/images/images/011/040/706/original/ismael-gil-sprite-walk.gif?1527559340";
+    string enmimg = "";
+    int ParaIndex = 2000;
+    signed int bgTop = 195; // 195
+    signed int charTop = -80;
+    signed int charRight = 110;
+    
+
+    
+    Scene();
+    add_yaml("story_template.yaml",{{"bgimg", bgimg},{"charimg", charimg},\
+    {"bgTop",bgTop},{"charTop", charTop}, {"charRight", charRight},\
+    {"enmimg",enmimg},{"paraIndex",ParaIndex}});
 
 
     const int health_index = 410;
@@ -125,8 +176,6 @@ engage!");
   //add_yaml ("help.yaml"); 
 
   //
-
-
 
   quit();
 
