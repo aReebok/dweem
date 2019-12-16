@@ -18,4 +18,4 @@ and additionally deletes items after use.
 
 You will see a function in Dweem2.cpp called enemy_heckle.
 This function was designed to have the enemy speak with you while you fought.  This function could also be used to have the character speak
-with the enemy.
+with the enemy.  The version of Dweem2.cpp in the repository will now let the enemy heckle you while you fight.
